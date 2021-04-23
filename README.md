@@ -36,12 +36,14 @@ In this project, I build up a communication system between scheduler, hospitals 
 ## The format of all the messages exchanged
 
 - For scheduler
+
     Receive capacity and occupancy (string) from hospitals.
     Receive client location (string) from client and sent it (string) to hospitals.
     Receive score (string) and distance (string) from hospitals.
     Send the assigned hospital id (string) to client.
 
 - For hospitals A, B, C
+
     Get hospital location, capacity, occupancy (string) from the command line.
     Send capacity and occupancy (string) to scheduler.
     Receive client location (string) from scheduler.
