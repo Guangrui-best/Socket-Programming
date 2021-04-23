@@ -85,7 +85,8 @@ int main(){
         }
         else if (pid == 0){
             close(sock_tcp);   //child doesn't need listener
-            char cli_buff[64];
+            char cli_buff[256];
+            memset(&cli_buff, 0, sizeof(cli_buff));
             if(recv(child_sock, cli_buff, sizeof(cli_buff), 0) < 0){
                 fprintf(stderr, "Receiving failed!");
                 exit(1);
@@ -94,7 +95,7 @@ int main(){
                  << " from the client using TCP over port 34073"<< endl;
         
             // send the client location to hospitals
-            char hosp_buff[64];
+            char hosp_buff[256];
             memset(&hosp_buff, 0, sizeof(hosp_buff));
             if (hospitalA.capacity > hospitalA.occupancy){
                 socklen_t hospA_len = sizeof(hospitalA.addr); 
@@ -223,7 +224,7 @@ void recv_from_hosp(int sock_udp){
     while (1){
         struct sockaddr_in hospital_addr;
         socklen_t hospital_addr_len = sizeof(hospital_addr);
-        char buffer[128];
+        char buffer[256];
         if(recvfrom(sock_udp, buffer, sizeof(buffer), 0, (struct sockaddr*)&hospital_addr, &hospital_addr_len) < 0){
             continue;
         }

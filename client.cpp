@@ -37,15 +37,17 @@ int main(int argc, char* argv[]){
     }
     cout << "The client is up and running" << endl;
 
-    char* message = argv[1];
-    // cout << message << endl;
-    if(send(sock, message, sizeof(message), 0) < 0){
+    string message = argv[1];
+    char cli_buff[256];
+    memset(cli_buff, 0, sizeof(cli_buff));
+    strcpy(cli_buff, message.c_str());
+    if(send(sock, cli_buff, sizeof(cli_buff), 0) < 0){
         fprintf(stderr, "Sending failed!");
         exit(1);
     }
     cout << "The client has sent query to Scheduler using TCP: client location " << message << endl;
     
-    char buffer[128];
+    char buffer[256];
     if(recv(sock, buffer, sizeof(buffer), 0) < 0){
         fprintf(stderr, "Receiving failed!");
         exit(1);

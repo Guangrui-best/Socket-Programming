@@ -77,7 +77,7 @@ int main(int argc, char *argv[]){
     scheduler_addr.sin_port = htons(33073);
     scheduler_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
-    char buffer[128];
+    char buffer[256];
     memset(&buffer, 0, sizeof(buffer));
     stringstream input;
     input << hospital.capacity << " " << hospital.occupancy;
@@ -86,7 +86,7 @@ int main(int argc, char *argv[]){
     sendto(sock, buffer, sizeof(buffer), 0, (struct sockaddr*)&scheduler_addr, sizeof(scheduler_addr));
     cout << "Hospital C has total capacity " << hospital.capacity << " and initial occupancy " << hospital.occupancy << endl;
 
-    char recvbuff[128];
+    char recvbuff[256];
     memset(&recvbuff, 0, sizeof(recvbuff));
     socklen_t scheduler_addr_len = sizeof(scheduler_addr);
     while (1){
