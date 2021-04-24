@@ -31,22 +31,23 @@ In this project, I build up a communication system between scheduler, hospitals 
 
 - For scheduler
 
-    Receive capacity and occupancy (string) from hospitals.
-    Receive client location (string) from client and sent it (string) to hospitals.
-    Receive score (string) and distance (string) from hospitals.
-    Send the assigned hospital id (string) to client.
+    - Receive capacity and occupancy (string) from hospitals.
+    - Receive client location (string) from client and sent it (string) to hospitals.
+    - Receive score (string) and distance (string) from hospitals.
+    - Send the assigned hospital id (string) to client.
 
 - For hospitals A, B, C
 
-    Get hospital location, capacity, occupancy (string) from the command line.
-    Send capacity and occupancy (string) to scheduler.
-    Receive client location (string) from scheduler.
+    - Get hospital location, capacity, occupancy (string) from the command line.
+    - Send capacity and occupancy (string) to scheduler.
+    - Receive client location (string) from scheduler.
     Send score and distance (string) to scheduler.
 
 - For client
-    Get client location (string) from the command line.
-    Send the location (string) to scheduler.
-    Receive the assigned hospital id (string) from scheduler.
+
+    - Get client location (string) from the command line.
+    - Send the location (string) to scheduler.
+    - Receive the assigned hospital id (string) from scheduler.
 
 ## Idiosyncrasy
 
