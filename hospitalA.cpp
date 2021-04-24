@@ -200,11 +200,11 @@ void Dijkstra_shortest_path(int loc){
         shortest_path[i] = graph[loc][i];
     }
     while(1){
-        float pre_min = -1;
+        float pre_min = FLT_MAX;
         int visited = -1;
         for(int i = 0; i < graph.size(); i++){
             if(IsVisited.find(i) == IsVisited.end() && shortest_path[i] != -1){
-                if(pre_min == -1 || pre_min > shortest_path[i]){
+                if(pre_min > shortest_path[i]){
                     pre_min = shortest_path[i];
                     visited = i;
                 }
