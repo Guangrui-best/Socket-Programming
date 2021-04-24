@@ -1,10 +1,4 @@
-# EE450 Socket Programming Project
-
-## Personal Information
-
-- Name: Guangrui Shen
-
-- USCID: 2801221073
+# Socket Programming Project
 
 ## What I have done in the project?
 
